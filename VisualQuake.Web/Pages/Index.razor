@@ -1,0 +1,35 @@
+﻿@page "/"
+
+<PageTitle>VisualQuake</PageTitle>
+
+<SfMaps Width="100vw" Height="100vh" Theme="Theme.MaterialDark">
+    <MapsZoomSettings Enable="true">
+        <MapsZoomToolbarSettings>
+            <MapsZoomToolbarButton ToolbarItems="new List<ToolbarItem>() { ToolbarItem.Zoom, ToolbarItem.ZoomIn, ToolbarItem.ZoomOut,
+            ToolbarItem.Pan, ToolbarItem.Reset }"></MapsZoomToolbarButton>
+        </MapsZoomToolbarSettings>
+    </MapsZoomSettings>
+
+    <MapsLayers>
+        <MapsLayer ShapeData='new {dataOptions= "https://cdn.syncfusion.com/maps/map-data/world-map.json"}' TValue="string">
+            <MapsMarkerSettings>
+                <MapsMarker Visible="true" DataSource="Earthquakes" Shape="MarkerType.Circle" Fill="white" Width="20" TValue="Earthquake">
+                    <MapsMarkerBorder Width="2" Color="#333"></MapsMarkerBorder>
+                    <MapsMarkerTooltipSettings Visible="true" ValuePath="Description"></MapsMarkerTooltipSettings>
+                </MapsMarker>
+            </MapsMarkerSettings>
+        </MapsLayer>
+    </MapsLayers>
+</SfMaps>
+
+@code {
+    [Inject]
+    private IEarthquakeService EarthquakeService { get; set; }
+
+    private IEnumerable<Earthquake> Earthquakes { get; set; } = new List<Earthquake>();
+
+    private const int NumberOfEarthquakes = 1000;
+
+    protected override async Task OnInitializedAsync()
+        => Earthquakes = await EarthquakeService.GetEarthquakesAsync(NumberOfEarthquakes);
+}
