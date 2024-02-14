@@ -1,15 +1,15 @@
-# VisualQuake
+# <img src="visualquake.png" width="25"/> VisualQuake
 
+### **👁️ Overview**
 Earthquake Visualization Web Application - 2021.
 
----
+<p align="justify">
+  VisualQuake is a web application designed for visualizing earthquake data worldwide, providing users with an interactive map interface to explore seismic activity across the globe.
+</p>
 
-### **Overview**
-VisualQuake is a web application designed for visualizing earthquake data worldwide, providing users with an interactive map interface to explore seismic activity across the globe.
+#
 
----
-
-### **Tech Stack**
+### **⚙️ Tech Stack**
 - Frontend
   - .NET 6 - ASP.NET Core Blazor Server
   - Syncfusion Blazor
@@ -20,12 +20,10 @@ VisualQuake is a web application designed for visualizing earthquake data worldw
 - Database
   - Microsoft SQL Server
 
----
+#
 
-### **Tools**
+### **🛠️ Tools**
 - Source Control: GitHub
 - IDE: Visual Studio 2022
 - API Client: Postman
 - RDBMS: Azure Data Studio
-
----
