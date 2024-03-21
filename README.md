@@ -1,4 +1,4 @@
-# <img src="visualquake.png" width="25"/> VisualQuake
+# <img src="visualquake.svg" width="25"/> VisualQuake
 
 ### **👁️ Overview**
 Earthquake Visualization Web Application - 2021.
